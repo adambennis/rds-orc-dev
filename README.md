@@ -50,7 +50,8 @@ terraform  apply -var-file=./test/dev1/terraform.tfvars
 
 If you wish to destroy your RDS resources in AWS, run <strong>terraform destroy</strong>.
 
-```terraform  destroy -var-file=./test/dev1/terraform.tfvars
+```
+terraform  destroy -var-file=./test/dev1/terraform.tfvars
 ```
 
 ## Terraform Outputs
