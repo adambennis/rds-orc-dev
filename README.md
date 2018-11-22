@@ -34,7 +34,7 @@ You'll need to change the following in the terraform.tfvars file for each enviro
 After the above tags and variable values have been changed, you can run <strong>terraform plan</strong> to see what Terraform intends to create.
 
 ```
-terraform  -var-file=./test/dev1/terraform.tfvars plan
+terraform plan  -var-file=./test/dev1/terraform.tfvars
 ```
 
 This will check against your .tfstate file to see both what exists and what will be created. If any of the items specified in the configuration do not exist you'll see a report of what Terraform intends to create.
@@ -43,14 +43,13 @@ This will check against your .tfstate file to see both what exists and what will
 If the output of <strong>terraformer plan</strong> looks acceptable you can run the <strong>terraform apply</strong> command to actually create the listed resources in AWS.
 
 ```
-terraform  -var-file=./test/dev1/terraform.tfvars apply
-```
+terraform  apply -var-file=./test/dev1/terraform.tfvars 
 
 ## Destroying
 If you wish to destroy your RDS resources in AWS, run <strong>terraform destroy</strong>.
 
 ```
-terraform  -var-file=./test/dev1/terraform.tfvars destroy
+terraform  destroy -var-file=./test/dev1/terraform.tfvars 
 ```
 
 ## Terraform Outputs
