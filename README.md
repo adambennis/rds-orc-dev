@@ -7,7 +7,7 @@ This is a sample stack  to create a Oracle RDS instance with dev appropriate siz
 To get started, clone the repository and change the directory names under each test* directory to your environment/name. Please note that creating RDS instances can take approximately 10-15 minutes to complete.
 
 ```
-mv test/dev1 test/dev2
+cp -pr test/dev1 test/dev2
 ```
 ## Developing
 You'll need to change the following in the terraform.tfvars file for each environment . The file contains environment-specific variables that will get called during execution time.
