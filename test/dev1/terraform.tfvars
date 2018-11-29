@@ -19,11 +19,11 @@ vrds_engine_version                     = "12.1.0.2.v14"            	#
 vrds_engine                             = "oracle-ee"
 vrds_identifier                         = "hpp"	                # WARNING  - changing this Forces a new resource
 vrds_instance_class                     = "db.m4.xlarge"	# Options include db.t2.small, db.t2.medium, db.t2.large, db.r3.large, db.r3.xlarge, db.r3.2xlarge
-vrds_storage_type                       = "gp2"                 # "io1" or gp2
-vrds_allocated_storage                  = "100" 			# Allocated storage in gigabytes
-vrds_iops                               = "0"                   # Must be number - for gp2 set 0 - for io1 set 1000
+vrds_storage_type                       = "io1"                 # "io1" or gp2
+vrds_allocated_storage                  = "500" 			# Allocated storage in gigabytes
+vrds_iops                               = "3000"                   # Must be number - for gp2 set 0 - for io1 set 1000
 vrds_final_snapshot_identifier    	= "final"    		# Optional - the name of your final DB snapshot when this DB instance is deleted (prefixed by your instance identifier)
-vrds_skip_final_snapshot                = "false"		# Optional - determines whether a final DB snapshot is created before the database is destroyed
+vrds_skip_final_snapshot                = "true"		# Optional - determines whether a final DB snapshot is created before the database is destroyed
 vrds_copy_tags_to_snapshot              = "true"		# Optional - on delete, copy all Instance tags to the final snapshot (if final_snapshot_identifier is specified)
 vrds_snapshot_identifier                = ""			# Optional - specifies whether or not to create this database from a snapshot
 vrds_username                           = "orcadmin"		# Required (unless a snapshot_identifier is provided)
@@ -42,6 +42,12 @@ vrds_vpc_id                             = "vpc-a0bf3dc8"
 vrds_replicate_source_db                = ""                    # Optional - Specifies that this resource is a Replicate database, and to use this value as the source database. This correlates fier of another RDS Database to replicate
 vrds_enabled_cloudwatch_logs_exports    = [ "alert","audit","listener","trace" ]         # Optional - Valid values (depending on engine): alert, audit, error, general, listener, slowquery, trace
 #vrds_perf_insights                      = "true"
+#
+#DMS specific parameters
+dms_allocated_storage                   = "250"
+dms_engine_version                      = "3.1.2"
+dms_replication_instance_class          = "dms.t2.large"
+dms_subnet                              = "dms-test-sub"
 
 # Instance Parameters for Reader
 #  - If Reader is not needed, set this value to 0.
