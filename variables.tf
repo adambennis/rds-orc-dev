@@ -45,6 +45,13 @@ variable "vrds_vpc_id" {}
 variable "vrds_perf_insights" { default = "false"}
 variable "vrds_enabled_cloudwatch_logs_exports" { default = [] }
 
+# DMS specific variables
+variable   "dms_allocated_storage" {}             
+variable   "dms_engine_version"    {}               
+variable   "dms_replication_instance_class" {}     
+variable   "dms_subnet" {}
+
+
 
 # RDS Reader Instance Arguments
 variable "vrds_ro_count" {}
